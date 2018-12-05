@@ -1,0 +1,54 @@
+\contentsline {section}{\numberline {1}System Overview}{3}
+\contentsline {section}{\numberline {2}Modules}{3}
+\contentsline {subsection}{\numberline {2.1}Module Overview}{3}
+\contentsline {subsection}{\numberline {2.2}main}{3}
+\contentsline {subsection}{\numberline {2.3}Overview}{3}
+\contentsline {subsubsection}{\numberline {2.3.1}Inputs}{4}
+\contentsline {subsubsection}{\numberline {2.3.2}Outputs}{4}
+\contentsline {subsection}{\numberline {2.4}code\textunderscore timeout\textunderscore timer}{5}
+\contentsline {subsubsection}{\numberline {2.4.1}Inputs}{5}
+\contentsline {subsubsection}{\numberline {2.4.2}Outputs}{5}
+\contentsline {subsection}{\numberline {2.5}set\textunderscore timeout\textunderscore timer}{5}
+\contentsline {subsubsection}{\numberline {2.5.1}Inputs}{5}
+\contentsline {subsubsection}{\numberline {2.5.2}Outputs}{5}
+\contentsline {subsection}{\numberline {2.6}open\textunderscore timeout\textunderscore timer}{6}
+\contentsline {subsubsection}{\numberline {2.6.1}Inputs}{6}
+\contentsline {subsubsection}{\numberline {2.6.2}Outputs}{6}
+\contentsline {subsection}{\numberline {2.7}display\textunderscore timeout\textunderscore timer}{6}
+\contentsline {subsubsection}{\numberline {2.7.1}Inputs}{6}
+\contentsline {subsubsection}{\numberline {2.7.2}Outputs}{6}
+\contentsline {subsection}{\numberline {2.8}clock\textunderscore divider}{6}
+\contentsline {subsubsection}{\numberline {2.8.1}Inputs}{6}
+\contentsline {subsubsection}{\numberline {2.8.2}Outputs}{7}
+\contentsline {subsection}{\numberline {2.9}input\textunderscore controller}{7}
+\contentsline {subsubsection}{\numberline {2.9.1}Inputs}{7}
+\contentsline {subsubsection}{\numberline {2.9.2}Outputs}{7}
+\contentsline {subsection}{\numberline {2.10}debouncer}{7}
+\contentsline {subsubsection}{\numberline {2.10.1}Inputs}{7}
+\contentsline {subsubsection}{\numberline {2.10.2}Outputs}{7}
+\contentsline {subsection}{\numberline {2.11}output\textunderscore controller}{8}
+\contentsline {subsubsection}{\numberline {2.11.1}Inputs}{8}
+\contentsline {subsubsection}{\numberline {2.11.2}Outputs}{8}
+\contentsline {subsection}{\numberline {2.12}System Diagrams}{9}
+\contentsline {section}{\numberline {3}Functional Specification}{10}
+\contentsline {subsection}{\numberline {3.1}Initial Setup}{10}
+\contentsline {subsection}{\numberline {3.2}Unlocking the Lock}{11}
+\contentsline {subsection}{\numberline {3.3}Changing the Code}{11}
+\contentsline {subsection}{\numberline {3.4}Display Timeout}{11}
+\contentsline {subsection}{\numberline {3.5}Code Input Timeout}{11}
+\contentsline {subsection}{\numberline {3.6}Lockdown Mode}{11}
+\contentsline {section}{\numberline {4}Development Milestones}{12}
+\contentsline {subsection}{\numberline {4.1}Gantt Chart}{12}
+\contentsline {section}{\numberline {5}Pitfalls}{12}
+\contentsline {section}{\numberline {6}Achievements}{12}
+\contentsline {section}{\numberline {7}Conclusion}{13}
+\contentsline {section}{\numberline {A}Clock Divider Code}{14}
+\contentsline {section}{\numberline {B}Code Timeout Timer Code}{15}
+\contentsline {section}{\numberline {C}Display Timeout Timer Code}{15}
+\contentsline {section}{\numberline {D}Open Timeout Timer Code}{16}
+\contentsline {section}{\numberline {E}Set Timeout Timer Code}{17}
+\contentsline {section}{\numberline {F}Debouncer Code}{17}
+\contentsline {section}{\numberline {G}Input Controller Code}{18}
+\contentsline {section}{\numberline {H}Main Finite State Machine Code}{21}
+\contentsline {section}{\numberline {I}Seven Segment Output Controller Code}{36}
+\contentsline {section}{\numberline {J}Top Level Code}{45}
