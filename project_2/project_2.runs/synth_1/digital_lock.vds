@@ -1,0 +1,610 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Wed Dec  5 04:53:31 2018
+# Process ID: 14352
+# Current directory: C:/Users/Chris/Documents/development/ncat-ecen424-project2/project_2/project_2.runs/synth_1
+# Command line: vivado.exe -log digital_lock.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source digital_lock.tcl
+# Log file: C:/Users/Chris/Documents/development/ncat-ecen424-project2/project_2/project_2.runs/synth_1/digital_lock.vds
+# Journal file: C:/Users/Chris/Documents/development/ncat-ecen424-project2/project_2/project_2.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source digital_lock.tcl -notrace
+Command: synth_design -top digital_lock -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 5444 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 347.004 ; gain = 100.555
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'digital_lock' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/digital_lock.vhd:12]
+INFO: [Synth 8-3491] module 'input_controller' declared at 'C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/input_controller.vhd:5' bound to instance 'ic' of component 'input_controller' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/digital_lock.vhd:95]
+INFO: [Synth 8-638] synthesizing module 'input_controller' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/input_controller.vhd:17]
+	Parameter clk_freq bound to: 50000000 - type: integer 
+	Parameter debounce_counter_size bound to: 8 - type: integer 
+	Parameter counter_size bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'debouncer' declared at 'C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/debouncer.vhd:5' bound to instance 'debounce_ps2_clk' of component 'debouncer' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/input_controller.vhd:50]
+INFO: [Synth 8-638] synthesizing module 'debouncer' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/debouncer.vhd:13]
+	Parameter counter_size bound to: 8 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'debouncer' (1#1) [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/debouncer.vhd:13]
+	Parameter counter_size bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'debouncer' declared at 'C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/debouncer.vhd:5' bound to instance 'debounce_ps2_data' of component 'debouncer' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/input_controller.vhd:53]
+WARNING: [Synth 8-614] signal 'ps2_code_timeout_comparator' is read in the process but is not in the sensitivity list [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/input_controller.vhd:58]
+WARNING: [Synth 8-614] signal 'ps2_code_timeout_comparator' is read in the process but is not in the sensitivity list [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/input_controller.vhd:93]
+WARNING: [Synth 8-614] signal 'ps2_word' is read in the process but is not in the sensitivity list [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/input_controller.vhd:93]
+WARNING: [Synth 8-614] signal 'ps2_code_timeout_comparator' is read in the process but is not in the sensitivity list [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/input_controller.vhd:127]
+WARNING: [Synth 8-6014] Unused sequential element ps2_code_sig_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/input_controller.vhd:85]
+INFO: [Synth 8-256] done synthesizing module 'input_controller' (2#1) [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/input_controller.vhd:17]
+INFO: [Synth 8-3491] module 'clock_divider' declared at 'C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/clock_divider.vhd:5' bound to instance 'clk_div' of component 'clock_divider' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/digital_lock.vhd:96]
+INFO: [Synth 8-638] synthesizing module 'clock_divider' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/clock_divider.vhd:11]
+INFO: [Synth 8-4471] merging register 'slowClock_sig_reg' into 'SlowClock_reg' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/clock_divider.vhd:27]
+WARNING: [Synth 8-6014] Unused sequential element slowClock_sig_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/clock_divider.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'clock_divider' (3#1) [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/clock_divider.vhd:11]
+INFO: [Synth 8-3491] module 'output_controller' declared at 'C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/output_controller.vhd:5' bound to instance 'oc' of component 'output_controller' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/digital_lock.vhd:97]
+INFO: [Synth 8-638] synthesizing module 'output_controller' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/output_controller.vhd:12]
+WARNING: [Synth 8-614] signal 'display_one' is read in the process but is not in the sensitivity list [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/output_controller.vhd:28]
+WARNING: [Synth 8-614] signal 'display_two' is read in the process but is not in the sensitivity list [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/output_controller.vhd:28]
+WARNING: [Synth 8-614] signal 'display_three' is read in the process but is not in the sensitivity list [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/output_controller.vhd:28]
+WARNING: [Synth 8-614] signal 'display_four' is read in the process but is not in the sensitivity list [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/output_controller.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'output_controller' (4#1) [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/output_controller.vhd:12]
+INFO: [Synth 8-3491] module 'code_timeout_timer' declared at 'C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/code_timeout_timer.vhd:5' bound to instance 'code_timer' of component 'code_timeout_timer' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/digital_lock.vhd:98]
+INFO: [Synth 8-638] synthesizing module 'code_timeout_timer' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/code_timeout_timer.vhd:9]
+WARNING: [Synth 8-614] signal 'enable' is read in the process but is not in the sensitivity list [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/code_timeout_timer.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'code_timeout_timer' (5#1) [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/code_timeout_timer.vhd:9]
+INFO: [Synth 8-3491] module 'display_timeout_timer' declared at 'C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/display_timeout_timer.vhd:5' bound to instance 'display_timer' of component 'display_timeout_timer' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/digital_lock.vhd:99]
+INFO: [Synth 8-638] synthesizing module 'display_timeout_timer' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/display_timeout_timer.vhd:9]
+WARNING: [Synth 8-614] signal 'enable' is read in the process but is not in the sensitivity list [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/display_timeout_timer.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'display_timeout_timer' (6#1) [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/display_timeout_timer.vhd:9]
+INFO: [Synth 8-3491] module 'open_timeout_timer' declared at 'C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/open_timeout_timer.vhd:5' bound to instance 'open_timer' of component 'open_timeout_timer' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/digital_lock.vhd:100]
+INFO: [Synth 8-638] synthesizing module 'open_timeout_timer' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/open_timeout_timer.vhd:9]
+WARNING: [Synth 8-614] signal 'enable' is read in the process but is not in the sensitivity list [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/open_timeout_timer.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'open_timeout_timer' (7#1) [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/open_timeout_timer.vhd:9]
+INFO: [Synth 8-3491] module 'set_timeout_timer' declared at 'C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/set_timeout_timer.vhd:5' bound to instance 'set_timer' of component 'set_timeout_timer' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/digital_lock.vhd:101]
+INFO: [Synth 8-638] synthesizing module 'set_timeout_timer' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/set_timeout_timer.vhd:9]
+WARNING: [Synth 8-614] signal 'enable' is read in the process but is not in the sensitivity list [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/set_timeout_timer.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'set_timeout_timer' (8#1) [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/set_timeout_timer.vhd:9]
+INFO: [Synth 8-3491] module 'main' declared at 'C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/main.vhd:5' bound to instance 'main_fsm' of component 'main' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/digital_lock.vhd:102]
+INFO: [Synth 8-638] synthesizing module 'main' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/main.vhd:24]
+WARNING: [Synth 8-614] signal 'cmd' is read in the process but is not in the sensitivity list [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/main.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'main' (9#1) [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/main.vhd:24]
+WARNING: [Synth 8-3848] Net vga_sig in module/entity digital_lock does not have driver. [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/digital_lock.vhd:25]
+INFO: [Synth 8-256] done synthesizing module 'digital_lock' (10#1) [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/digital_lock.vhd:12]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[13]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[12]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[11]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[10]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[9]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[8]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[7]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[6]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[5]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[4]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[3]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[2]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[1]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 400.480 ; gain = 154.031
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 400.480 ; gain = 154.031
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Chris/Documents/development/ncat-ecen424-project2/project_2/project_2.srcs/constrs_1/new/const.xdc]
+WARNING: [Vivado 12-584] No ports matched 'seven_seg_data[13]'. [C:/Users/Chris/Documents/development/ncat-ecen424-project2/project_2/project_2.srcs/constrs_1/new/const.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Chris/Documents/development/ncat-ecen424-project2/project_2/project_2.srcs/constrs_1/new/const.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seven_seg_data[12]'. [C:/Users/Chris/Documents/development/ncat-ecen424-project2/project_2/project_2.srcs/constrs_1/new/const.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Chris/Documents/development/ncat-ecen424-project2/project_2/project_2.srcs/constrs_1/new/const.xdc:16]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/Chris/Documents/development/ncat-ecen424-project2/project_2/project_2.srcs/constrs_1/new/const.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Chris/Documents/development/ncat-ecen424-project2/project_2/project_2.srcs/constrs_1/new/const.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/digital_lock_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/digital_lock_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 733.746 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 733.746 ; gain = 487.297
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 733.746 ; gain = 487.297
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 733.746 ; gain = 487.297
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element counter_out_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/debouncer.vhd:27]
+INFO: [Synth 8-5546] ROM "ps2_code" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element count_idle_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/input_controller.vhd:78]
+WARNING: [Synth 8-6014] Unused sequential element ps2_code_timeout_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/input_controller.vhd:130]
+WARNING: [Synth 8-6014] Unused sequential element refresh_counter_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/output_controller.vhd:24]
+WARNING: [Synth 8-6014] Unused sequential element current_count_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/code_timeout_timer.vhd:19]
+WARNING: [Synth 8-6014] Unused sequential element current_count_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/display_timeout_timer.vhd:19]
+WARNING: [Synth 8-6014] Unused sequential element current_count_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/open_timeout_timer.vhd:19]
+WARNING: [Synth 8-6014] Unused sequential element current_count_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/set_timeout_timer.vhd:19]
+INFO: [Synth 8-802] inferred FSM for state register 'next_state_reg' in module 'main'
+INFO: [Synth 8-5544] ROM "code_five" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "code_five" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "code_five" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      s0 |                           000000 |                           000000
+                      s1 |                           000001 |                           000001
+                     s1a |                           000010 |                           000010
+                     s1b |                           000011 |                           000011
+                     s1c |                           000100 |                           000100
+                     s1d |                           000101 |                           000101
+                     s1e |                           000110 |                           000110
+                     s1f |                           000111 |                           000111
+                     s1g |                           001000 |                           001000
+                     s1h |                           001001 |                           001001
+                     s1i |                           001010 |                           001010
+                     s1j |                           001011 |                           001011
+                     s1k |                           001100 |                           001100
+                     s1l |                           001101 |                           001101
+                     s1m |                           001110 |                           001110
+                     s1n |                           001111 |                           001111
+                     s2h |                           010000 |                           011010
+                     s2i |                           010001 |                           011011
+                     s2j |                           010010 |                           011100
+                     s2k |                           010011 |                           011101
+                     s2l |                           010100 |                           011110
+                     s2m |                           010101 |                           011111
+                     s2n |                           010110 |                           100000
+                     s2o |                           010111 |                           100001
+                     s2p |                           011000 |                           100010
+                     s2q |                           011001 |                           100011
+                      s5 |                           011010 |                           100110
+                     s5a |                           011011 |                           100111
+                     s5b |                           011100 |                           101000
+                     s5c |                           011101 |                           101001
+                     s5d |                           011110 |                           101010
+                     s5e |                           011111 |                           101011
+                     s5f |                           100000 |                           101100
+                     s5g |                           100001 |                           101101
+                     s5h |                           100010 |                           101110
+                     s5i |                           100011 |                           101111
+                     s5j |                           100100 |                           110000
+                     s5k |                           100101 |                           110001
+                     s5l |                           100110 |                           110010
+                     s5m |                           100111 |                           110011
+                     s5n |                           101000 |                           110100
+                     s5o |                           101001 |                           110101
+                     s5p |                           101010 |                           110110
+                      s3 |                           101011 |                           100100
+                      s4 |                           101100 |                           100101
+                      s2 |                           101101 |                           010010
+                     s2a |                           101110 |                           010011
+                     s2b |                           101111 |                           010100
+                     s2c |                           110000 |                           010101
+                     s2d |                           110001 |                           010110
+                     s2e |                           110010 |                           010111
+                     s2g |                           110011 |                           011001
+                     s2f |                           110100 |                           011000
+                      sx |                           110101 |                           110111
+                     s1o |                           110110 |                           010000
+                     s1p |                           110111 |                           010001
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'next_state_reg' using encoding 'sequential' in module 'main'
+WARNING: [Synth 8-327] inferring latch for variable 'enable_code_reg' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/main.vhd:482]
+WARNING: [Synth 8-327] inferring latch for variable 'reset_code_reg' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/main.vhd:481]
+WARNING: [Synth 8-327] inferring latch for variable 'enable_set_reg' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/main.vhd:409]
+WARNING: [Synth 8-327] inferring latch for variable 'reset_set_reg' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/main.vhd:408]
+WARNING: [Synth 8-327] inferring latch for variable 'enable_open_reg' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/main.vhd:476]
+WARNING: [Synth 8-327] inferring latch for variable 'reset_open_reg' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/main.vhd:611]
+WARNING: [Synth 8-327] inferring latch for variable 'enable_display_reg' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/main.vhd:466]
+WARNING: [Synth 8-327] inferring latch for variable 'reset_display_reg' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/main.vhd:465]
+WARNING: [Synth 8-327] inferring latch for variable 'vga_display_cmd_reg' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/main.vhd:401]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 733.746 ; gain = 487.297
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     27 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 4     
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
+	   9 Input      1 Bit         XORs := 1     
++---Registers : 
+	               27 Bit    Registers := 1     
+	                9 Bit    Registers := 2     
+	                5 Bit    Registers := 4     
+	                4 Bit    Registers := 18    
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 11    
++---Muxes : 
+	   4 Input     12 Bit        Muxes := 1     
+	  56 Input      6 Bit        Muxes := 1     
+	 111 Input      6 Bit        Muxes := 1     
+	  13 Input      4 Bit        Muxes := 1     
+	  56 Input      4 Bit        Muxes := 1     
+	  58 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+	  56 Input      1 Bit        Muxes := 31    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module debouncer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                9 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module input_controller 
+Detailed RTL Component Info : 
++---XORs : 
+	   9 Input      1 Bit         XORs := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	  13 Input      4 Bit        Muxes := 1     
+Module clock_divider 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     27 Bit       Adders := 1     
++---Registers : 
+	               27 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
+Module output_controller 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     12 Bit        Muxes := 1     
+	  58 Input      1 Bit        Muxes := 1     
+Module code_timeout_timer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module display_timeout_timer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module open_timeout_timer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module set_timeout_timer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module main 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 18    
+	                2 Bit    Registers := 1     
++---Muxes : 
+	  56 Input      6 Bit        Muxes := 1     
+	 111 Input      6 Bit        Muxes := 1     
+	  56 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+	  56 Input      1 Bit        Muxes := 31    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element ic/ps2_code_new_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/input_controller.vhd:84]
+WARNING: [Synth 8-6014] Unused sequential element clk_div/FastClock_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/clock_divider.vhd:24]
+WARNING: [Synth 8-6014] Unused sequential element clk_div/led0_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/clock_divider.vhd:29]
+WARNING: [Synth 8-6014] Unused sequential element ic/debounce_ps2_clk/counter_out_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/debouncer.vhd:27]
+WARNING: [Synth 8-6014] Unused sequential element ic/debounce_ps2_data/counter_out_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/debouncer.vhd:27]
+WARNING: [Synth 8-6014] Unused sequential element ic/count_idle_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/input_controller.vhd:78]
+WARNING: [Synth 8-6014] Unused sequential element ic/ps2_code_timeout_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/input_controller.vhd:130]
+WARNING: [Synth 8-6014] Unused sequential element oc/refresh_counter_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/output_controller.vhd:24]
+WARNING: [Synth 8-6014] Unused sequential element code_timer/current_count_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/code_timeout_timer.vhd:19]
+WARNING: [Synth 8-6014] Unused sequential element display_timer/current_count_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/display_timeout_timer.vhd:19]
+WARNING: [Synth 8-6014] Unused sequential element open_timer/current_count_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/open_timeout_timer.vhd:19]
+WARNING: [Synth 8-6014] Unused sequential element set_timer/current_count_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/set_timeout_timer.vhd:19]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[13]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[12]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[11]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[10]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[9]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[8]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[7]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[6]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[5]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[4]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[3]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[2]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[1]
+WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[0]
+WARNING: [Synth 8-3332] Sequential element (ic/ps2_word_reg[0]) is unused and will be removed from module digital_lock.
+WARNING: [Synth 8-3332] Sequential element (main_fsm/vga_display_cmd_reg[3]) is unused and will be removed from module digital_lock.
+WARNING: [Synth 8-3332] Sequential element (main_fsm/vga_display_cmd_reg[2]) is unused and will be removed from module digital_lock.
+WARNING: [Synth 8-3332] Sequential element (main_fsm/vga_display_cmd_reg[1]) is unused and will be removed from module digital_lock.
+WARNING: [Synth 8-3332] Sequential element (main_fsm/vga_display_cmd_reg[0]) is unused and will be removed from module digital_lock.
+WARNING: [Synth 8-3332] Sequential element (ic/count_idle_reg[0]) is unused and will be removed from module digital_lock.
+WARNING: [Synth 8-3332] Sequential element (ic/count_idle_reg[1]) is unused and will be removed from module digital_lock.
+WARNING: [Synth 8-3332] Sequential element (ic/count_idle_reg[2]) is unused and will be removed from module digital_lock.
+WARNING: [Synth 8-3332] Sequential element (ic/count_idle_reg[3]) is unused and will be removed from module digital_lock.
+WARNING: [Synth 8-3332] Sequential element (ic/count_idle_reg[4]) is unused and will be removed from module digital_lock.
+WARNING: [Synth 8-3332] Sequential element (ic/count_idle_reg[5]) is unused and will be removed from module digital_lock.
+WARNING: [Synth 8-3332] Sequential element (ic/count_idle_reg[6]) is unused and will be removed from module digital_lock.
+WARNING: [Synth 8-3332] Sequential element (ic/count_idle_reg[7]) is unused and will be removed from module digital_lock.
+WARNING: [Synth 8-3332] Sequential element (ic/count_idle_reg[8]) is unused and will be removed from module digital_lock.
+WARNING: [Synth 8-3332] Sequential element (ic/count_idle_reg[9]) is unused and will be removed from module digital_lock.
+WARNING: [Synth 8-3332] Sequential element (ic/count_idle_reg[10]) is unused and will be removed from module digital_lock.
+WARNING: [Synth 8-3332] Sequential element (ic/count_idle_reg[11]) is unused and will be removed from module digital_lock.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 733.746 ; gain = 487.297
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------------+------------------+---------------+----------------+
+|Module Name       | RTL Object       | Depth x Width | Implemented As | 
++------------------+------------------+---------------+----------------+
+|output_controller | display_four     | 64x8          | LUT            | 
+|output_controller | display_three    | 64x8          | LUT            | 
+|digital_lock      | oc/display_four  | 64x8          | LUT            | 
+|digital_lock      | oc/display_three | 64x8          | LUT            | 
++------------------+------------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 733.746 ; gain = 487.297
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 733.746 ; gain = 487.297
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (display_timer/current_count_reg[4]) is unused and will be removed from module digital_lock.
+WARNING: [Synth 8-3332] Sequential element (set_timer/current_count_reg[4]) is unused and will be removed from module digital_lock.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 759.484 ; gain = 513.035
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 759.484 ; gain = 513.035
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 759.484 ; gain = 513.035
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 759.484 ; gain = 513.035
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 759.484 ; gain = 513.035
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 759.484 ; gain = 513.035
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 759.484 ; gain = 513.035
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |    19|
+|3     |LUT1   |    12|
+|4     |LUT2   |    40|
+|5     |LUT3   |    24|
+|6     |LUT4   |    25|
+|7     |LUT5   |    29|
+|8     |LUT6   |   122|
+|9     |FDCE   |    66|
+|10    |FDRE   |   149|
+|11    |LD     |     8|
+|12    |IBUF   |     4|
+|13    |OBUF   |    14|
+|14    |OBUFT  |    14|
++------+-------+------+
+
+Report Instance Areas: 
++------+----------------------+----------------------+------+
+|      |Instance              |Module                |Cells |
++------+----------------------+----------------------+------+
+|1     |top                   |                      |   528|
+|2     |  clk_div             |clock_divider         |    37|
+|3     |  code_timer          |code_timeout_timer    |    15|
+|4     |  display_timer       |display_timeout_timer |    11|
+|5     |  ic                  |input_controller      |   115|
+|6     |    debounce_ps2_clk  |debouncer             |    25|
+|7     |    debounce_ps2_data |debouncer_0           |    25|
+|8     |  main_fsm            |main                  |   242|
+|9     |  oc                  |output_controller     |    49|
+|10    |  open_timer          |open_timeout_timer    |    14|
+|11    |  set_timer           |set_timeout_timer     |    11|
++------+----------------------+----------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 759.484 ; gain = 513.035
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 62 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:36 . Memory (MB): peak = 759.484 ; gain = 179.770
+Synthesis Optimization Complete : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 759.484 ; gain = 513.035
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 31 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 8 instances were transformed.
+  LD => LDCE: 8 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+77 Infos, 94 Warnings, 2 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 759.484 ; gain = 526.172
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Chris/Documents/development/ncat-ecen424-project2/project_2/project_2.runs/synth_1/digital_lock.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file digital_lock_utilization_synth.rpt -pb digital_lock_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 759.484 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Dec  5 04:54:24 2018...

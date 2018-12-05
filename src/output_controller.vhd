@@ -3,10 +3,10 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity output_controller is
-  port(display : in std_logic_vector(3 downto 0);
+  port(display : in std_logic_vector(5 downto 0);
     clk : in std_logic;
     lockout_led : out std_logic;
-    vga : out std_logic_vector(13 downto 0));
+    seven_seg : out std_logic_vector(11 downto 0));
 end entity output_controller;
 
 architecture output_behavior of output_controller is
@@ -29,128 +29,429 @@ begin
     begin
         case anode_counter is
         when "00" =>
-            vga(11 downto 8) <= "0111";
-            vga(7 downto 0) <= display_one;
+            seven_seg(11 downto 8) <= "0111";
+            seven_seg(7 downto 0) <= display_one;
         when "01" =>
-            vga(11 downto 8) <= "1011";
-            vga(7 downto 0) <= display_two;
+            seven_seg(11 downto 8) <= "1011";
+            seven_seg(7 downto 0) <= display_two;
         when "10" =>
-            vga(11 downto 8) <= "1101";
-            vga(7 downto 0) <= display_three;
+            seven_seg(11 downto 8) <= "1101";
+            seven_seg(7 downto 0) <= display_three;
         when "11" =>
-            vga(11 downto 8) <= "1110";
-            vga(7 downto 0) <= display_four;
+            seven_seg(11 downto 8) <= "1110";
+            seven_seg(7 downto 0) <= display_four;
         end case;
     end process;
 
     process(display)
         begin
             case display is
-              when "0000" =>
+              when "000000" =>
                 -- display '0'
                 display_one <= "11111111";
                 display_two <= "11111111";
                 display_three <= "11111111";
                 display_four <= "00000011";
                 lockout_led <= '0';
-              when "0001" =>
+              when "000001" =>
                 -- display '1'
                 display_one <= "11111111";
                 display_two <= "11111111";
                 display_three <= "11111111";
                 display_four <= "10011111";
                 lockout_led <= '0';
-              when "0010" =>
+              when "000010" =>
                 -- display '2'
                 display_one <= "11111111";
                 display_two <= "11111111";
                 display_three <= "11111111";
                 display_four <= "00100101";
                 lockout_led <= '0';
-              when "0011" =>
+              when "000011" =>
                 -- display '3'
                 display_one <= "11111111";
                 display_two <= "11111111";
                 display_three <= "11111111";
                 display_four <= "00001101";
                 lockout_led <= '0';
-              when "0100" =>
+              when "000100" =>
                 -- display '4'
                 display_one <= "11111111";
                 display_two <= "11111111";
                 display_three <= "11111111";
                 display_four <= "10011001";
                 lockout_led <= '0';
-              when "0101" =>
+              when "000101" =>
                 -- display '5'
                 display_one <= "11111111";
                 display_two <= "11111111";
                 display_three <= "11111111";
                 display_four <= "01001001";
                 lockout_led <= '0';
-              when "0110" =>
+              when "000110" =>
                 -- display '6'
                 display_one <= "11111111";
                 display_two <= "11111111";
                 display_three <= "11111111";
                 display_four <= "01000001";
                 lockout_led <= '0';
-              when "0111" =>
+              when "000111" =>
                 -- display '7'
                 display_one <= "11111111";
                 display_two <= "11111111";
                 display_three <= "11111111";
                 display_four <= "00011111";
                 lockout_led <= '0';
-              when "1000" =>
+              when "001000" =>
                 -- display '8'
                 display_one <= "11111111";
                 display_two <= "11111111";
                 display_three <= "11111111";
                 display_four <= "00000001";
                 lockout_led <= '0';
-              when "1001" =>
+              when "001001" =>
                 -- display '9'
                 display_one <= "11111111";
                 display_two <= "11111111";
                 display_three <= "11111111";
                 display_four <= "00001001";
                 lockout_led <= '0';
-              when "1010" =>
-                -- make display show "0000"
-                display_one <= "00000011";
-                display_two <= "00000011";
-                display_three <= "00000011";
+              when "001010" =>
+                -- display '10'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "10011111";
                 display_four <= "00000011";
                 lockout_led <= '0';
-              when "1011" =>
-                -- make display show "Clr"
+              when "001011" =>
+                -- display '11'
                 display_one <= "11111111";
-                display_two <= "11100101";
-                display_three <= "11110011";
-                display_four <= "11110101";
+                display_two <= "11111111";
+                display_three <= "10011111";
+                display_four <= "10011111";
                 lockout_led <= '0';
-              when "1100" =>
-                -- make display show "err"
+              when "001100" =>
+                -- display '12'
                 display_one <= "11111111";
-                display_two <= "01100001";
-                display_three <= "11110101";
-                display_four <= "11110101";
+                display_two <= "11111111";
+                display_three <= "10011111";
+                display_four <= "00100101";
                 lockout_led <= '0';
-              when "1101" =>
-                -- lockout led
+              when "001101" =>
+                -- display '13'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "10011111";
+                display_four <= "00001101";
+                lockout_led <= '1';
+              when "001110" =>
+                -- display '14'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "10011111";
+                display_four <= "10011001";
+                lockout_led <= '0';
+              when "001111" =>
+                -- display '15'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "10011111";
+                display_four <= "01001001";
+                lockout_led <= '0';
+              when "010000" =>
+                -- display '16'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "10011111";
+                display_four <= "01000001";
+                lockout_led <= '0';
+              when "010001" =>
+                -- display '17'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "10011111";
+                display_four <= "00011111";
+                lockout_led <= '0';
+              when "010010" =>
+                -- display '18'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "10011111";
+                display_four <= "00000001";
+                lockout_led <= '0';
+              when "010011" =>
+                -- display '19'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "10011111";
+                display_four <= "00001001";
+                lockout_led <= '0';
+              when "010100" =>
+                -- display '20'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "00100101";
+                display_four <= "00000011";
+                lockout_led <= '0';
+              when "010101" =>
+                -- display '21'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "00100101";
+                display_four <= "10011111";
+                lockout_led <= '0';
+              when "010110" =>
+                -- display '22'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "00100101";
+                display_four <= "00100101";
+                lockout_led <= '0';
+              when "010111" =>
+                -- display '23'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "00100101";
+                display_four <= "00001101";
+                lockout_led <= '0';
+              when "011000" =>
+                -- display '24'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "00100101";
+                display_four <= "10011001";
+                lockout_led <= '0';
+              when "011001" =>
+                -- display '25'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "00100101";
+                display_four <= "01001001";
+                lockout_led <= '0';
+              when "011010" =>
+                -- display '26'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "00100101";
+                display_four <= "01000001";
+                lockout_led <= '0';
+              when "011011" =>
+                -- display '27'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "00100101";
+                display_four <= "00011111";
+                lockout_led <= '0';
+              when "011100" =>
+                -- display '28'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "00100101";
+                display_four <= "00000001";
+                lockout_led <= '0';
+              when "011101" =>
+                -- display '29'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "00100101";
+                display_four <= "00001001";
+                lockout_led <= '0';
+              when "011110" =>
+                -- display '30'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "00001101";
+                display_four <= "00000011";
+                lockout_led <= '0';
+              when "011111" =>
+                -- display '31'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "00001101";
+                display_four <= "10011111";
+                lockout_led <= '0';
+              when "100000" =>
+                -- display '32'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "00001101";
+                display_four <= "00100101";
+                lockout_led <= '0';
+              when "100001" =>
+                -- display '33'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "00001101";
+                display_four <= "00001101";
+                lockout_led <= '0';
+              when "100010" =>
+                -- display '34'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "00001101";
+                display_four <= "10011001";
+                lockout_led <= '0';
+              when "100011" =>
+                -- display '35'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "00001101";
+                display_four <= "01001001";
+                lockout_led <= '0';
+              when "100100" =>
+                -- display '36'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "00001101";
+                display_four <= "01000001";
+                lockout_led <= '0';
+              when "100101" =>
+                -- display '37'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "00001101";
+                display_four <= "00011111";
+                lockout_led <= '0';
+              when "100110" =>
+                -- display '38'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "00001101";
+                display_four <= "00000001";
+                lockout_led <= '0';
+              when "100111" =>
+                -- display '39'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "00001101";
+                display_four <= "00001001";
+                lockout_led <= '0';
+              when "101000" =>
+                -- display '40'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "10011001";
+                display_four <= "00000011";
+                lockout_led <= '0';
+              when "101001" =>
+                -- display '41'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "10011001";
+                display_four <= "10011111";
+                lockout_led <= '0';
+              when "101010" =>
+                -- display '42'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "10011001";
+                display_four <= "00100101";
+                lockout_led <= '0';
+              when "101011" =>
+                -- display '43'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "10011001";
+                display_four <= "00001101";
+                lockout_led <= '0';
+              when "101100" =>
+                -- display '44'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "10011001";
+                display_four <= "10011001";
+                lockout_led <= '0';
+              when "101101" =>
+                -- display '45'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "10011001";
+                display_four <= "01001001";
+                lockout_led <= '0';
+              when "101110" =>
+                -- display '46'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "10011001";
+                display_four <= "01000001";
+                lockout_led <= '0';
+              when "101111" =>
+                -- display '47'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "10011001";
+                display_four <= "00011111";
+                lockout_led <= '0';
+              when "110000" =>
+                -- display '48'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "10011001";
+                display_four <= "00000001";
+                lockout_led <= '0';
+              when "110001" =>
+                -- display '49'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "10011001";
+                display_four <= "00001001";
+                lockout_led <= '0';
+              when "110010" =>
+                -- display '50'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "01001001";
+                display_four <= "00000011";
+                lockout_led <= '0';
+              when "110011" =>
+                -- display '51'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "01001001";
+                display_four <= "10011111";
+                lockout_led <= '0';
+              when "110100" =>
+                -- display '52'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "01001001";
+                display_four <= "00100101";
+                lockout_led <= '0';
+              when "110101" =>
+                -- display '53'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "01001001";
+                display_four <= "00001101";
+                lockout_led <= '0';
+              when "110110" =>
+                -- display '54'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "01001001";
+                display_four <= "10011001";
+                lockout_led <= '0';
+              when "110111" =>
+                -- display '55'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "01001001";
+                display_four <= "01001001";
+                lockout_led <= '0';
+              when "111000" =>
+                -- display '56'
+                display_one <= "11111111";
+                display_two <= "11111111";
+                display_three <= "01001001";
+                display_four <= "01000001";
+                lockout_led <= '0';
+              when others =>
+                -- lockout
                 display_one <= "11111111";
                 display_two <= "11111111";
                 display_three <= "11111111";
                 display_four <= "11111111";
                 lockout_led <= '1';
-              when others =>
-                -- display off
-                display_one <= "11111111";
-                display_two <= "11111111";
-                display_three <= "11111111";
-                display_four <= "11111111";
-                lockout_led <= '0';
             end case;
         end process;
 end architecture output_behavior;
