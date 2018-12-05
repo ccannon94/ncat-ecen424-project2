@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Wed Dec  5 04:53:31 2018
-# Process ID: 14352
+# Start of session at: Wed Dec  5 05:43:34 2018
+# Process ID: 1168
 # Current directory: C:/Users/Chris/Documents/development/ncat-ecen424-project2/project_2/project_2.runs/synth_1
 # Command line: vivado.exe -log digital_lock.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source digital_lock.tcl
 # Log file: C:/Users/Chris/Documents/development/ncat-ecen424-project2/project_2/project_2.runs/synth_1/digital_lock.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 5444 
+INFO: Helper process launched with PID 116 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 347.004 ; gain = 100.555
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 347.402 ; gain = 100.840
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'digital_lock' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/digital_lock.vhd:12]
 INFO: [Synth 8-3491] module 'input_controller' declared at 'C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/input_controller.vhd:5' bound to instance 'ic' of component 'input_controller' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/digital_lock.vhd:95]
@@ -86,7 +86,7 @@ WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[2]
 WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[1]
 WARNING: [Synth 8-3331] design digital_lock has unconnected port vga_data[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 400.480 ; gain = 154.031
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 401.082 ; gain = 154.520
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -96,7 +96,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 400.480 ; gain = 154.031
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 401.082 ; gain = 154.520
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -118,22 +118,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 733.746 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 733.824 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 733.746 ; gain = 487.297
+Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 733.824 ; gain = 487.262
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 733.746 ; gain = 487.297
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 733.824 ; gain = 487.262
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 733.746 ; gain = 487.297
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 733.824 ; gain = 487.262
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-6014] Unused sequential element counter_out_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/debouncer.vhd:27]
 INFO: [Synth 8-5546] ROM "ps2_code" won't be mapped to RAM because it is too sparse
@@ -247,7 +247,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'enable_display_reg' [C:/Use
 WARNING: [Synth 8-327] inferring latch for variable 'reset_display_reg' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/main.vhd:465]
 WARNING: [Synth 8-327] inferring latch for variable 'vga_display_cmd_reg' [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/main.vhd:401]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 733.746 ; gain = 487.297
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 733.824 ; gain = 487.262
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -263,6 +263,7 @@ Detailed RTL Component Info :
 	   2 Input     27 Bit       Adders := 1     
 	   2 Input      9 Bit       Adders := 2     
 	   2 Input      5 Bit       Adders := 4     
+	   2 Input      3 Bit       Adders := 1     
 	   2 Input      2 Bit       Adders := 1     
 +---XORs : 
 	   2 Input      1 Bit         XORs := 2     
@@ -272,8 +273,9 @@ Detailed RTL Component Info :
 	                9 Bit    Registers := 2     
 	                5 Bit    Registers := 4     
 	                4 Bit    Registers := 18    
+	                3 Bit    Registers := 1     
 	                2 Bit    Registers := 4     
-	                1 Bit    Registers := 11    
+	                1 Bit    Registers := 12    
 +---Muxes : 
 	   4 Input     12 Bit        Muxes := 1     
 	  56 Input      6 Bit        Muxes := 1     
@@ -313,9 +315,11 @@ Module clock_divider
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     27 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
 	               27 Bit    Registers := 1     
-	                1 Bit    Registers := 4     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
 Module output_controller 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -378,6 +382,7 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-6014] Unused sequential element ic/ps2_code_new_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/input_controller.vhd:84]
+WARNING: [Synth 8-6014] Unused sequential element clk_div/clk_25_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/clock_divider.vhd:44]
 WARNING: [Synth 8-6014] Unused sequential element clk_div/FastClock_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/clock_divider.vhd:24]
 WARNING: [Synth 8-6014] Unused sequential element clk_div/led0_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/clock_divider.vhd:29]
 WARNING: [Synth 8-6014] Unused sequential element ic/debounce_ps2_clk/counter_out_reg was removed.  [C:/Users/Chris/Documents/development/ncat-ecen424-project2/src/debouncer.vhd:27]
@@ -420,8 +425,11 @@ WARNING: [Synth 8-3332] Sequential element (ic/count_idle_reg[8]) is unused and 
 WARNING: [Synth 8-3332] Sequential element (ic/count_idle_reg[9]) is unused and will be removed from module digital_lock.
 WARNING: [Synth 8-3332] Sequential element (ic/count_idle_reg[10]) is unused and will be removed from module digital_lock.
 WARNING: [Synth 8-3332] Sequential element (ic/count_idle_reg[11]) is unused and will be removed from module digital_lock.
+WARNING: [Synth 8-3332] Sequential element (clk_div/cnt2_reg[2]) is unused and will be removed from module digital_lock.
+WARNING: [Synth 8-3332] Sequential element (clk_div/cnt2_reg[1]) is unused and will be removed from module digital_lock.
+WARNING: [Synth 8-3332] Sequential element (clk_div/cnt2_reg[0]) is unused and will be removed from module digital_lock.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 733.746 ; gain = 487.297
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 733.824 ; gain = 487.262
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -450,13 +458,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 733.746 ; gain = 487.297
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 733.824 ; gain = 487.262
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 733.746 ; gain = 487.297
+Finished Timing Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 733.824 ; gain = 487.262
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -470,7 +478,7 @@ Start Technology Mapping
 WARNING: [Synth 8-3332] Sequential element (display_timer/current_count_reg[4]) is unused and will be removed from module digital_lock.
 WARNING: [Synth 8-3332] Sequential element (set_timer/current_count_reg[4]) is unused and will be removed from module digital_lock.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 759.484 ; gain = 513.035
+Finished Technology Mapping : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 760.707 ; gain = 514.145
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -494,7 +502,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 759.484 ; gain = 513.035
+Finished IO Insertion : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 760.707 ; gain = 514.145
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -507,7 +515,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 759.484 ; gain = 513.035
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 760.707 ; gain = 514.145
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -519,25 +527,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 759.484 ; gain = 513.035
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 760.707 ; gain = 514.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 759.484 ; gain = 513.035
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 760.707 ; gain = 514.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 759.484 ; gain = 513.035
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 760.707 ; gain = 514.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 759.484 ; gain = 513.035
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 760.707 ; gain = 514.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -586,11 +594,11 @@ Report Instance Areas:
 |11    |  set_timer           |set_timeout_timer     |    11|
 +------+----------------------+----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 759.484 ; gain = 513.035
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 760.707 ; gain = 514.145
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 62 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:36 . Memory (MB): peak = 759.484 ; gain = 179.770
-Synthesis Optimization Complete : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 759.484 ; gain = 513.035
+Synthesis finished with 0 errors, 0 critical warnings and 66 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:37 . Memory (MB): peak = 760.707 ; gain = 181.402
+Synthesis Optimization Complete : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 760.707 ; gain = 514.145
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 31 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -601,10 +609,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   LD => LDCE: 8 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-77 Infos, 94 Warnings, 2 Critical Warnings and 0 Errors encountered.
+77 Infos, 98 Warnings, 2 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 759.484 ; gain = 526.172
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:50 . Memory (MB): peak = 760.707 ; gain = 527.086
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Chris/Documents/development/ncat-ecen424-project2/project_2/project_2.runs/synth_1/digital_lock.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file digital_lock_utilization_synth.rpt -pb digital_lock_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 759.484 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Wed Dec  5 04:54:24 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.061 . Memory (MB): peak = 760.707 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Dec  5 05:44:30 2018...

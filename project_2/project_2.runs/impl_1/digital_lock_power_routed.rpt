@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date             : Wed Dec  5 04:55:54 2018
+| Date             : Wed Dec  5 05:46:06 2018
 | Host             : c3-windows10 running 64-bit major release  (build 9200)
 | Command          : report_power -file digital_lock_power_routed.rpt -pb digital_lock_power_summary_routed.pb -rpx digital_lock_power_routed.rpx
 | Design           : digital_lock
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 16.073 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 16.340 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 15.781                           |
-| Device Static (W)        | 0.293                            |
+| Dynamic (W)              | 16.037                           |
+| Device Static (W)        | 0.303                            |
 | Effective TJA (C/W)      | 5.0                              |
-| Max Ambient (C)          | 4.6                              |
-| Junction Temperature (C) | 105.4                            |
+| Max Ambient (C)          | 3.3                              |
+| Junction Temperature (C) | 106.7                            |
 | Confidence Level         | Low                              |
 | Setting File             | ---                              |
 | Simulation Activity File | ---                              |
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     1.340 |      516 |       --- |             --- |
-|   LUT as Logic |     1.234 |      227 |     20800 |            1.09 |
-|   Register     |     0.052 |      223 |     41600 |            0.54 |
+| Slice Logic    |     1.427 |      516 |       --- |             --- |
+|   LUT as Logic |     1.320 |      225 |     20800 |            1.08 |
+|   Register     |     0.053 |      223 |     41600 |            0.54 |
 |   CARRY4       |     0.043 |       19 |      8150 |            0.23 |
 |   BUFG         |     0.012 |        2 |        32 |            6.25 |
 |   Others       |     0.000 |       20 |       --- |             --- |
-| Signals        |     1.299 |      445 |       --- |             --- |
-| I/O            |    13.142 |       32 |       106 |           30.19 |
-| Static Power   |     0.293 |          |           |                 |
-| Total          |    16.073 |          |           |                 |
+| Signals        |     1.345 |      443 |       --- |             --- |
+| I/O            |    13.264 |       32 |       106 |           30.19 |
+| Static Power   |     0.303 |          |           |                 |
+| Total          |    16.340 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,9 +71,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     2.838 |       2.651 |      0.187 |
-| Vccaux    |       1.800 |     0.515 |       0.481 |      0.034 |
-| Vcco33    |       3.300 |     3.717 |       3.716 |      0.001 |
+| Vccint    |       1.000 |     2.980 |       2.784 |      0.196 |
+| Vccaux    |       1.800 |     0.521 |       0.486 |      0.035 |
+| Vcco33    |       3.300 |     3.752 |       3.751 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -138,17 +138,17 @@ Table of Contents
 +-----------------------+-----------+
 | Name                  | Power (W) |
 +-----------------------+-----------+
-| digital_lock          |    15.781 |
-|   clk_div             |     0.107 |
-|   code_timer          |     0.063 |
-|   display_timer       |     0.048 |
-|   ic                  |     0.337 |
-|     debounce_ps2_clk  |     0.079 |
-|     debounce_ps2_data |     0.080 |
-|   main_fsm            |     1.638 |
-|   oc                  |     0.343 |
-|   open_timer          |     0.033 |
-|   set_timer           |     0.025 |
+| digital_lock          |    16.037 |
+|   clk_div             |     0.115 |
+|   code_timer          |     0.070 |
+|   display_timer       |     0.050 |
+|   ic                  |     0.366 |
+|     debounce_ps2_clk  |     0.078 |
+|     debounce_ps2_data |     0.086 |
+|   main_fsm            |     1.709 |
+|   oc                  |     0.351 |
+|   open_timer          |     0.039 |
+|   set_timer           |     0.028 |
 +-----------------------+-----------+
 
 

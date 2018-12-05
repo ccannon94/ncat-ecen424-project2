@@ -13,7 +13,7 @@ architecture digital_lock_arch of digital_lock is
 
   -- Signals for clock divider
   signal start_timer : std_logic := '0';
-  signal fast_clk, med_clk, slow_clk, slow_clk_led : std_logic;
+  signal clk_25, fast_clk, med_clk, slow_clk, slow_clk_led : std_logic;
 
   -- Signals for input controller
   signal ps2_code_new : std_logic;
@@ -45,7 +45,7 @@ architecture digital_lock_arch of digital_lock is
   component clock_divider is
     port(clk : in std_logic;
          start_timer : in std_logic;
-         FastClock,MediumClock,SlowClock, led0 : out std_logic);
+         clk_25,FastClock,MediumClock,SlowClock, led0 : out std_logic);
   end component clock_divider;
 
   component input_controller is
@@ -93,13 +93,13 @@ architecture digital_lock_arch of digital_lock is
 
 begin
   ic : input_controller port map(clk, ps2_clk, ps2_data, ps2_code_new, ps2_code);
-  clk_div : clock_divider port map(clk, start_timer, fast_clk, med_clk, slow_clk, slow_clk_led);
+  clk_div : clock_divider port map(clk, start_timer, clk_25, fast_clk, med_clk, slow_clk, slow_clk_led);
   oc : output_controller port map(seven_seg_cmd, clk, lockout_led_sig, seven_seg_sig);
   code_timer : code_timeout_timer port map(enable_code, reset_code, slow_clk, code_timeout);
   display_timer : display_timeout_timer port map(enable_display, reset_display, slow_clk, display_timeout);
   open_timer : open_timeout_timer port map(enable_open, reset_open, slow_clk, open_timeout);
   set_timer : set_timeout_timer port map(enable_set, reset_set, slow_clk, set_timeout);
-  main_fsm : main port map(med_clk, reset, ps2_code, code_timeout, set_timeout, open_timeout, display_timeout, enable_code, reset_code, enable_set, reset_set, enable_open, reset_open, enable_display, reset_display, vga_display_cmd, seven_seg_cmd);
+  main_fsm : main port map(slow_clk, reset, ps2_code, code_timeout, set_timeout, open_timeout, display_timeout, enable_code, reset_code, enable_set, reset_set, enable_open, reset_open, enable_display, reset_display, vga_display_cmd, seven_seg_cmd);
 
   lockout_led <= lockout_led_sig;
   vga_data <= vga_sig;
